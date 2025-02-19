@@ -17,7 +17,7 @@ export default function Sidebar({ activeSection, scrollToSection }: SidebarProps
     <aside className="w-88 bg-section-background-2 shadow-md p-6 flex flex-col text-foreground">
       <div className="mb-8 text-center">
         <Image
-          src="/headshot.png"
+          src="./headshot.png"
           alt="Samuel Cheyette"
           width={150}
           height={150}

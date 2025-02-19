@@ -17,7 +17,7 @@ export default function CV() {
         </CardHeader>
         <CardContent>
           <div className="bg-muted rounded-lg">
-            <iframe src="/cv.pdf" className="w-full h-[800px] rounded-lg" title="CV" />
+            <iframe src="./cv.pdf" className="w-full h-[800px] rounded-lg" title="CV" />
           </div>
         </CardContent>
       </Card>
