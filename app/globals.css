@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White */
+    --foreground: 0 0% 0%; /* Black */
+    --section-background-1: 210 50% 20%; /* Slightly lighter blue */
+    --section-background-2: 210 50% 25%; /* Even lighter blue */
+    --section-background-3: 210 50% 30%; /* Lightest blue */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 0%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 30%;
+    --accent: 0 0% 0%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 80%;
+    --input: 0 0% 100%;
+    --ring: 0 0% 0%;
+    --radius: 0.5rem;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px; /* Increase base font size */
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  .dark {
+    --background: 210 50% 10%;
+    --foreground: 0 0% 100%;
+    --card: 210 50% 15%;
+    --card-foreground: 0 0% 100%;
+    --popover: 210 50% 15%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 210 50% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 50% 30%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 50% 20%;
+    --muted-foreground: 0 0% 100%;
+    --accent: 210 50% 25%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 50% 15%;
+    --input: 210 50% 15%;
+    --ring: 210 50% 35%;
+  }
+}
+
+.papers-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem; /* equivalent to gap-6 */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .papers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .papers-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
