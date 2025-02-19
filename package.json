@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "predeploy": "rm -rf out && mkdir out && npm run build && touch out/.nojekyll",
+    "predeploy": "rm -rf out && mkdir out && npm run build && touch out/.nojekyll && cp public/CNAME out/",
     "deploy": "gh-pages -d out --dotfiles",
     "export": "next export"
   },
