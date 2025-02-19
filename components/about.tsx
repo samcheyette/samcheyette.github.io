@@ -13,7 +13,7 @@ export default function About() {
           You can read a précis of my thesis <a href="papers/CHEYETTE_SAMUEL_PRECIS.pdf" className="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener noreferrer">here</a>.
         </p>
 
-        <p>
+        <p className="text-gray-800 text-lg text-left">
             My recent projects explore how people learn geometric patterns, reason about physical systems, and actively seek information in ways that respect their cognitive limitations. 
             One direction I am particularly excited about is modeling and experimentally testing how people reason in complex settings without holding many pieces of information in memory simultaneously.
 
@@ -33,17 +33,37 @@ export default function About() {
           <div className="text-left">
             <h1 className="font-semibold text-xl">Education</h1>
             <ul className="list-none text-gray-800 text-lg">
-              <li>
-                Postdoctoral Researcher, 2022-Present
-                <div className="text-sm text-gray-600">MIT, Computational Cognitive Science Lab</div>
-              </li><br></br>
-              <li>
-                PhD in Psychology, 2016-2022
-                <div className="text-sm text-gray-600">UC Berkeley, Computation and Language Lab</div>
-              </li><br></br>
-              <li>
-                BS in Cognitive Science, 2012-2016
-                <div className="text-sm text-gray-600">Carnegie Mellon University</div>
+              <li className="flex items-start gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-graduation-cap mt-1 h-5 w-5 text-gray-600">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+                <div>
+                  Postdoctoral Researcher, 2022-Present
+                  <div className="text-sm text-gray-600">MIT, Computational Cognitive Science Lab</div>
+                </div>
+              </li>
+              <br/>
+              <li className="flex items-start gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-graduation-cap mt-1 h-5 w-5 text-gray-600">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+                <div>
+                  PhD in Psychology, 2016-2022
+                  <div className="text-sm text-gray-600">UC Berkeley, Computation and Language Lab</div>
+                </div>
+              </li>
+              <br/>
+              <li className="flex items-start gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-graduation-cap mt-1 h-5 w-5 text-gray-600">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+                <div>
+                  BS in Cognitive Science, 2012-2016
+                  <div className="text-sm text-gray-600">Carnegie Mellon University</div>
+                </div>
               </li>
             </ul>
           </div>
