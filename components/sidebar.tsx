@@ -23,9 +23,11 @@ export default function Sidebar({ activeSection, scrollToSection }: SidebarProps
           height={150}
           className="rounded-full mx-auto mb-4"
         />
-        <h1 className="text-3xl font-bold">Samuel Cheyette</h1>
+        <h1 className="text-3xl font-bold">Sam Cheyette</h1>
         <p className="text-lg text-muted-foreground">Postdoctoral Researcher</p>
         <p className="text-lg text-muted-foreground">MIT Brain & Cognitive Sciences</p>
+        <p className="text-sm text-muted-foreground">cheyette@mit.edu</p>
+
         <div className="flex justify-center gap-4 mt-4">
           <a 
             href="https://github.com/samcheyette" 
