@@ -24,7 +24,7 @@ const nextConfig = {
     parallelServerCompiles: true,
   },
   output: 'export',
-  assetPrefix: isProd ? '' : '',
+  assetPrefix: '.',
 }
 
 mergeConfig(nextConfig, userConfig)
