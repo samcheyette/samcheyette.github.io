@@ -39,9 +39,9 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen bg-background justify-center">
-      <div className="flex max-w-7xl w-full">
+      <div className="flex flex-col lg:flex-row w-full max-w-7xl">
         <Sidebar activeSection={activeSection} scrollToSection={scrollToSection} />
-        <main className="flex-1 p-8 overflow-x-hidden">
+        <main className="flex-1 p-4 lg:p-8 overflow-x-hidden">
           <div className="w-full max-w-5xl mx-auto">
             <About />
             <Papers />

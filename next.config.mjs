@@ -24,8 +24,7 @@ const nextConfig = {
     parallelServerCompiles: true,
   },
   output: 'export',
-  distDir: 'dist',
-  assetPrefix: './_next',
+  assetPrefix: '.',
   basePath: '',
   trailingSlash: true,
   onDemandEntries: {
