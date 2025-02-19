@@ -24,7 +24,15 @@ const nextConfig = {
     parallelServerCompiles: true,
   },
   output: 'export',
-  assetPrefix: '.',
+  distDir: 'dist',
+  assetPrefix: './_next',
+  basePath: '',
+  trailingSlash: true,
+  onDemandEntries: {
+    // Enable debug logging
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
 }
 
 mergeConfig(nextConfig, userConfig)
