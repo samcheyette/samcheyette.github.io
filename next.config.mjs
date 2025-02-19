@@ -5,6 +5,8 @@ try {
   // ignore error
 }
 
+const isProd = process.env.NODE_ENV === 'production';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -22,7 +24,7 @@ const nextConfig = {
     parallelServerCompiles: true,
   },
   output: 'export',
-  assetPrefix: './',
+  assetPrefix: isProd ? '' : '',
 }
 
 mergeConfig(nextConfig, userConfig)
