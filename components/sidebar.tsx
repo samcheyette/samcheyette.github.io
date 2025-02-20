@@ -37,7 +37,7 @@ export default function Sidebar({ activeSection, scrollToSection }: SidebarProps
             <Github className="h-6 w-6" />
           </a>
           <a 
-            href="https://scholar.google.com/citations?user=YOUR_ID" 
+            href="https://scholar.google.com/citations?user=4YaE59cAAAAJ&hl=en" 
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 hover:text-gray-800"
