@@ -2,12 +2,12 @@ import { Github, Book, Linkedin } from "lucide-react"
 
 export default function About() {
   return (
-    <section id="about" className="mb-8 lg:mb-16 max-w-6xl mx-auto bg-white text-black p-4 lg:p-8 rounded-lg">
+    <section id="about" className="mb-4 max-w-6xl mx-auto bg-white text-black p-4 lg:p-8 rounded-lg">
       <div className="flex flex-col gap-4">
         <h1 className="text-3xl font-bold text-center">About Me</h1>
         <p className="text-gray-800 text-lg text-left">
           I am a researcher at MIT (CoCoSci) studying how people perceive, learn, and reason effectively given limited cognitive resources. I did my graduate work with Steve Piantadosi at UC Berkeley. 
-          My thesis work was aimed at understanding the mechanisms underlying visual numerosity perception. I've used behavioral experiments and computational models to link the visual information people gather from a scene to their ultimate perceptions of numerosity. 
+          My thesis work was aimed at understanding the mechanisms underlying visual numerosity perception. I've used behavioral experiments and computational models to link the visual information people gather from a scene to their ultimate perceptions of quantities. 
           I have shown that the psychophysics of number, including "subitizing" small numbers and Weber's law for higher numbers, reflects optimal inference under a limited informational capacity. 
           See an explainer <a href="http://colala.berkeley.edu:3838/unified_model/" className="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener noreferrer">here</a>.
           You can read a précis of my thesis <a href="papers/CHEYETTE_SAMUEL_PRECIS.pdf" className="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener noreferrer">here</a>.
@@ -24,10 +24,10 @@ export default function About() {
             <h1 className="font-semibold text-xl">Interests</h1>
             <ul className="list-disc list-inside text-gray-800 text-lg">
               <li>Bayesian & information-theoretic modeling</li>
-              <li>Human reasoning</li>
               <li>Visual perception</li>
               <li>Numerical cognition</li>
-              <li>Structure learning</li>
+              <li>Active information-seeking</li>
+              <li>Concept learning</li>
             </ul>
           </div>
           <div className="text-left">

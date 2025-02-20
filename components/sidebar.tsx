@@ -9,8 +9,7 @@ interface SidebarProps {
 export default function Sidebar({ activeSection, scrollToSection }: SidebarProps) {
   const navItems = [
     { id: "about", label: "About" },
-    { id: "papers", label: "Papers" },
-    { id: "cv", label: "CV" },
+    { id: "papers", label: "Papers" }
   ]
 
   return (

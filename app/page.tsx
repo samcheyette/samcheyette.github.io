@@ -11,7 +11,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["about", "papers", "cv"]
+      const sections = ["about", "papers"]
       const scrollPosition = window.scrollY
 
       for (const section of sections) {
@@ -44,8 +44,8 @@ export default function Home() {
         <main className="flex-1 p-4 lg:p-8 overflow-x-hidden">
           <div className="w-full max-w-5xl mx-auto">
             <About />
-            <Papers />
             <CV />
+            <Papers />
           </div>
         </main>
       </div>
