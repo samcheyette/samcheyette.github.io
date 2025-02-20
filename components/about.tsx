@@ -8,7 +8,7 @@ export default function About() {
         <p className="text-gray-800 text-lg text-left">
           I am a researcher at MIT (CoCoSci) studying how people perceive, learn, and reason effectively given limited cognitive resources. I did my graduate work with Steve Piantadosi at UC Berkeley. 
           My thesis work was aimed at understanding the mechanisms underlying visual numerosity perception. I've used behavioral experiments and computational models to link the visual information people gather from a scene to their ultimate perceptions of quantities. 
-          I have shown that the psychophysics of number, including "subitizing" small numbers and Weber's law for higher numbers, reflects optimal inference under a limited informational capacity. 
+          In one project, I showed that the psychophysics of number, including "subitizing" small quantities and Weber's law for larger quantities, reflects optimal inference under a limited informational capacity. 
           See an explainer <a href="http://colala.berkeley.edu:3838/unified_model/" className="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener noreferrer">here</a>.
           You can read a précis of my thesis <a href="papers/CHEYETTE_SAMUEL_PRECIS.pdf" className="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener noreferrer">here</a>.
         </p>
