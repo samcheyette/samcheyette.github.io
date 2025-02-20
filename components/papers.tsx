@@ -11,6 +11,13 @@ interface Paper {
 
 const selectedPapers: Paper[] = [
   {
+    title: "Representational constraints shape human information-seeking",
+    authors: "Cheyette, S.J., Callaway F.L., Bramley N., Nelson, J., Tenenbaum J.B.",
+    year: "Under Review", 
+    venue: "",
+    pdf: "papers/cheyette_information_seeking_2025.pdf"
+  },
+  {
     title: "Limited information-processing capacity in vision explains number psychophysics",
     authors: "Cheyette, S. J., Wu, S., & Piantadosi, S. T.",
     year: 2024,
