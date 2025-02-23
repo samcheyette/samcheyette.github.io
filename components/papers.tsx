@@ -36,7 +36,7 @@ const selectedPapers: Paper[] = [
     authors: "Mills, T., Tenenbaum, J. B., & Cheyette, S. J.",
     year: 2024,
     venue: "Neural Information Processing Systems",
-    pdf: "papers/mills_tenenbaum_cheyette_2024_spatiotemporal.pdf"
+    pdf: "papers/mills_tenenbaum_cheyette_2024.pdf"
   },
   {
     title: "A unified account of numerosity perception",
