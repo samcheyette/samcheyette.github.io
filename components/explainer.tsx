@@ -46,8 +46,7 @@ const explainers: ExplainerEntry[] = [
     figure: {
       src: "/figures/nhb_unified_account_fig.png",
       alt: "Probability of numeric responses over time for N=3, 6, 9 with model fits",
-      caption:
-        "The probability (y-axis) of numeric responses (x-axis) over presentation times (faceted) for N=3, N=6, and N=9. Bars are shown for the human data and lines are shown for the model predictions. With longer exposure durations (>160ms), people's estimates are exact for small quantities (e.g. N=3) and then increasingly inexact for larger quantities (e.g., N=6 and N=9); with shorter durations, people are inexact even for small quantities. The model recapitulates the shape of human response distributions and how they are modulated both by cardinality and exposure duration.",
+      caption:  "The probability (y-axis) of numeric responses (x-axis) over presentation times (faceted) for N=3, N=6, and N=9. Bars are shown for the human data and lines are shown for the model predictions.",
     },
     body: [
       "People can instantly recognize up to about four objects with near-perfect accuracy ('subitizing'), but beyond that, our estimates become noisier, with errors growing roughly in proportion to the number. Traditionally, psychologists explained this discontinuity by assuming two separate systems for small and large numbers. In this paper, we show that a single system, constrained by limited information-processing capacity, naturally produces both patterns.",
@@ -63,7 +62,7 @@ const explainers: ExplainerEntry[] = [
       src: "/figures/program-learning-and-examples.png",
       alt: "Program induction model and participant predictions across timepoints",
       caption:
-        "Left: Illustration of a program induction model predicting how a 2-D sequence unfolds. Right: Predictions at selected timepoints from each population; older children and adults show more structured, often multimodal predictions, whereas younger children and monkeys tend to track the locally linear trend.",
+        "Left: Illustration of a program induction model predicting how a 2-D sequence unfolds. Right: Predictions at selected timepoints from each population; older children and adults show more structured predictions; younger children and monkeys tend to track the locally linear trend.",
     },
     body: [
       "In a collaboration with Tracey Mills, Josh Tenenbaum, and others, we examined program learning abilities across development and species using a 2‑D sequence prediction task. We found that a probabilistic program‑learning model with motor operators (e.g., move and turn) and higher‑level control operators (e.g., concatenation, repetition, sub‑routines) best explains adult learning speed and error patterns compared to a range of alternative inductive models.",
@@ -89,7 +88,7 @@ export default function Explainer() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <figure>
-                  <div className={`flex justify-center transition-transform duration-300 ${openValue === `item-${idx}` ? 'scale-105' : 'scale-90'}`}>
+                  <div className={`flex justify-center transition-transform duration-300 ${openValue === `item-${idx}` ? 'scale-105' : 'scale-80'}`}>
                     <Image
                       src={item.figure.src}
                       alt={item.figure.alt}
