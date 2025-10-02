@@ -80,24 +80,7 @@ export default function Explainer() {
     <section id="explainer" className="mb-16 max-w-5xl mx-auto bg-white text-black p-8 rounded-lg space-y-8">
       <h2 className="text-3xl font-bold mb-2 text-center">Project Highlights</h2>
 
-      <div className="flex flex-wrap justify-center gap-2">
-        {explainers.map((item, idx) => (
-          <button
-            key={`toc-${idx}`}
-            onClick={() => {
-              const value = `item-${idx}`
-              setOpenValue(value)
-              const el = document.getElementById(`explainer-item-${idx}`)
-              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }}
-            className="text-xs md:text-sm px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-50 text-gray-700"
-          >
-            {item.title}
-          </button>
-        ))}
-      </div>
-
-      <Accordion type="single" collapsible value={openValue} onValueChange={setOpenValue} className="space-y-6">
+      <Accordion type="single" collapsible value={openValue} onValueChange={setOpenValue} className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {explainers.map((item, idx) => (
           <AccordionItem key={idx} value={`item-${idx}`}>
             <Card id={`explainer-item-${idx}`} className="shadow-sm border border-gray-200 hover:shadow-md transition">
