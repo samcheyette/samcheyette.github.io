@@ -11,7 +11,14 @@ interface Paper {
 
 const selectedPapers: Paper[] = [
   {
-    title: "Representational constraints shape human information-seeking",
+    title: "Spatiotemporal program learning in human adults, children, and monkeys",
+    authors: "Mills, T., Coates, N., Silva, A.A., Ji, K., Ferrigno, S., Schulz, L.E., Tenenbaum, J.B., Cheyette, S.J.",
+    year: "Under Review", 
+    venue: "",
+    pdf: "papers/mills_et_al_2025.pdf"
+  },
+  {
+    title: "Human active learning trades off informativity and interpretability",
     authors: "Cheyette, S.J., Callaway F.L., Bramley N., Nelson, J., Tenenbaum J.B.",
     year: "Under Review", 
     venue: "",
@@ -58,6 +65,13 @@ const selectedPapers: Paper[] = [
     year: 2019,
     venue: "Proceedings of the National Academy of Sciences",
     pdf: "papers/cheyette_piantadosi_2019.pdf"
+  }, 
+  {
+    title: "Modeling the N400 ERP component as transient semantic over-activation within a neural network model of word comprehension",
+    authors: "Cheyette, S. J., Plaut, D. C.",
+    year: 2017,
+    venue: "Cognition",
+    pdf: "papers/cheyette_plaut_2017.pdf"
   }
 ];
 
