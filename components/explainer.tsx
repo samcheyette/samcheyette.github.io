@@ -1,10 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 type ExplainerEntry = {
   title: string;
@@ -48,53 +47,87 @@ const explainers: ExplainerEntry[] = [
       src: "/figures/nhb_unified_account_fig.png",
       alt: "Probability of numeric responses over time for N=3, 6, 9 with model fits",
       caption:
-        "The probability (y-axis) of numeric responses (x-axis) over presentation times (faceted) for N=3, N=6, and N=9. Bars are shown for the human data and lines are shown for the model predictions. With longer exposure durations ($>$160ms), people's estimates are exact for small quantities (e.g. N=3) and then increasingly inexact for larger quantities (e.g., N=6 and N=9); with shorter durations, people are inexact even for small quantities. The model recapitulates the shape of human response distributions and how they are modulated both by cardinality and exposure duration.",
+        "The probability (y-axis) of numeric responses (x-axis) over presentation times (faceted) for N=3, N=6, and N=9. Bars are shown for the human data and lines are shown for the model predictions. With longer exposure durations (>160ms), people's estimates are exact for small quantities (e.g. N=3) and then increasingly inexact for larger quantities (e.g., N=6 and N=9); with shorter durations, people are inexact even for small quantities. The model recapitulates the shape of human response distributions and how they are modulated both by cardinality and exposure duration.",
     },
     body: [
       "People can instantly recognize up to about four objects with near-perfect accuracy ('subitizing'), but beyond that, our estimates become noisier, with errors growing roughly in proportion to the number. Traditionally, psychologists explained this discontinuity by assuming two separate systems for small and large numbers. In this paper, we show that a single system, constrained by limited information-processing capacity, naturally produces both patterns.",
-      "Using information theory, we derived how an optimal perceptual system should represent quantity under a finite 'bit budget.' This model explains subitizing, scalar variability, underestimation biases, and sensitivity to presentation time and contrast. We ran an estimation task where we modulated the amount of available information by varying the exposure time of displays as well as the display contrast. The data matched our model closely: with more available information, estimates became sharper, the subitizing range widened, and biases diminished.",
+      "We derived how an optimal perceptual system should represent quantity under a finite 'bit budget.' This model explains subitizing, scalar variability, underestimation biases, and sensitivity to presentation time and contrast. We ran an estimation task where we modulated the amount of available information by varying the exposure time of displays as well as the display contrast. The data matched our model closely: with more available information, estimates became sharper, the subitizing range widened, and biases diminished.",
     ],
     pdfHref: "papers/cheyette_piantadosi_2020.pdf",
 
   }
+  ,
+  {
+    title: "Spatiotemporal program learning across development and species",
+    figure: {
+      src: "/figures/program-learning-and-examples.png",
+      alt: "Program induction model and participant predictions across timepoints",
+      caption:
+        "Left: Illustration of a program induction model predicting how a 2-D sequence unfolds. Right: Predictions at selected timepoints from each population; older children and adults show more structured, often multimodal predictions, whereas younger children and monkeys tend to track the locally linear trend.",
+    },
+    body: [
+      "In a collaboration with Tracey Mills, Josh Tenenbaum, and others, we examined program learning abilities across development and species using a 2‑D sequence prediction task. We found that a probabilistic program‑learning model with motor operators (e.g., move and turn) and higher‑level control operators (e.g., concatenation, repetition, sub‑routines) best explains adult learning speed and error patterns compared to a range of alternative inductive models.",
+      "Amazingly, children as young as four showed adult‑like program induction on our task, learning complex algorithms to model and predict patterns on the fly. However, younger children (mostly 3‑year‑olds) and monkeys primarily used simpler statistical extrapolation strategies—even after tens of thousands of training examples for monkeys. These findings highlight statistical learning mechanisms shared across development and species, alongside a potentially uniquely human capacity for structured program learning that emerges early in development.",
+    ],
+    pdfHref: "papers/mills_et_al_2025.pdf",
+  }
 ]
 
 export default function Explainer() {
+  const [openValue, setOpenValue] = useState<string | undefined>(undefined)
+
   return (
     <section id="explainer" className="mb-16 max-w-5xl mx-auto bg-white text-black p-8 rounded-lg space-y-8">
       <h2 className="text-3xl font-bold mb-2 text-center">Project Highlights</h2>
-      <div className="space-y-8">
+
+      <div className="flex flex-wrap justify-center gap-2">
         {explainers.map((item, idx) => (
-          <Card key={idx} className="shadow-sm border border-gray-200 hover:shadow-md transition">
-            <CardHeader>
-              <CardTitle className="text-xl text-gray-900">{item.title}</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <figure>
+          <button
+            key={`toc-${idx}`}
+            onClick={() => {
+              const value = `item-${idx}`
+              setOpenValue(value)
+              const el = document.getElementById(`explainer-item-${idx}`)
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }}
+            className="text-xs md:text-sm px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-50 text-gray-700"
+          >
+            {item.title}
+          </button>
+        ))}
+      </div>
+
+      <Accordion type="single" collapsible value={openValue} onValueChange={setOpenValue} className="space-y-6">
+        {explainers.map((item, idx) => (
+          <AccordionItem key={idx} value={`item-${idx}`}>
+            <Card id={`explainer-item-${idx}`} className="shadow-sm border border-gray-200 hover:shadow-md transition">
+              <CardHeader>
+                <CardTitle className="text-xl text-gray-900">{item.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <figure>
+                  <div className={`flex justify-center transition-transform duration-300 ${openValue === `item-${idx}` ? 'scale-105' : 'scale-90'}`}>
+                    <Image
+                      src={item.figure.src}
+                      alt={item.figure.alt}
+                      width={420}
+                      height={300}
+                      className="rounded-md border"
+                    />
+                  </div>
+                  <figcaption className="mt-2 text-sm text-gray-600 text-center">
+                    {item.figure.caption}
+                  </figcaption>
+                </figure>
+
                 <div className="flex justify-center">
-                  <Image
-                    src={item.figure.src}
-                    alt={item.figure.alt}
-                    width={700}
-                    height={460}
-                    className="rounded-md border"
-                  />
+                  <AccordionTrigger className="w-auto px-0 text-sm text-blue-700 hover:text-blue-900">
+                    Read more
+                  </AccordionTrigger>
                 </div>
-                <figcaption className="mt-2 text-sm text-gray-600 text-center">
-                  {item.figure.caption}
-                </figcaption>
-              </figure>
-              <Collapsible>
-                <div className="flex justify-center">
-                  <CollapsibleTrigger asChild>
-                    <Button variant="ghost" className="text-sm text-blue-700 hover:text-blue-900 gap-1">
-                      Read more
-                      <ChevronDown className="h-4 w-4" />
-                    </Button>
-                  </CollapsibleTrigger>
-                </div>
-                <CollapsibleContent>
-                  <div className="mt-3 space-y-3 text-[15px] leading-7 text-gray-800 font-serif" style={{ fontFamily: 'Georgia, serif' }}>
+
+                <AccordionContent>
+                  <div className="mt-1 space-y-3 text-[15px] leading-7 text-gray-800 font-serif" style={{ fontFamily: 'Georgia, serif' }}>
                     {item.body.map((para, pIdx) => (
                       <p key={pIdx}>{para}</p>
                     ))}
@@ -111,12 +144,12 @@ export default function Explainer() {
                       </div>
                     )}
                   </div>
-                </CollapsibleContent>
-              </Collapsible>
-            </CardContent>
-          </Card>
+                </AccordionContent>
+              </CardContent>
+            </Card>
+          </AccordionItem>
         ))}
-      </div>
+      </Accordion>
     </section>
   );
 }
