@@ -28,7 +28,7 @@ const explainers: ExplainerEntry[] = [
     pdfHref: "papers/cheyette_information_seeking_2025.pdf",
   },
   {
-    title: "A serial foveal accumulator underlies approximate estimation",
+    title: "A serial, foveal accumulator underlies approximate numerical estimation",
     figure: {
       src: "/figures/pnas_fixations.png",
       alt: "Example fixation paths",
